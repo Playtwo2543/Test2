@@ -1,0 +1,45 @@
+body {
+    font-family: Arial, sans-serif;
+    background: url(https://i.pinimg.com/originals/77/ca/a3/77caa32884d735d439ade45ba37feaf2.gif);
+    background-size: 100%;
+    text-align: center;
+    padding: 100px;
+}
+
+.container {
+    background: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    display: inline-block;
+}
+
+input[type="number"] {
+    padding: 8px;
+    margin: 10px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    width: 200px;
+}
+
+button {
+    padding: 10px 20px;
+    margin: 10px;
+    border: none;
+    border-radius: 40px;
+    background-color: pink;
+    color: black;
+    font-size: 1em;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: magenta;
+}
+
+.result {
+    margin-top: 20px;
+    font-size: 1.2em;
+    color: #333;
+}
+

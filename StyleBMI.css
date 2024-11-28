@@ -1,0 +1,74 @@
+body{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Poppins",sans-serif;
+    
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background: url(https://cdn.dribbble.com/users/720738/screenshots/3008140/animation.gif) no-repeat;
+    background-size: cover;
+    background-position: center;
+}   
+
+
+.jeng {
+    background: #ffffff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    width: 400px;
+    text-align: center;
+}
+
+h1 {
+    color: #333;
+}
+
+fieldset {
+    border: 4px solid #007bff;
+    border-radius: 5px;
+    padding: 15px;
+    margin-bottom: 15px;
+}
+
+label {
+    font-size: 14px;
+    font-weight: bold;
+    color: #555;
+}
+
+input[type="number"] {
+    padding: 6px;
+    margin-bottom: 10px;
+    border: 1px solid #ddd;
+    border-radius: 20px;
+    box-sizing: border-box;
+}
+
+.result {
+    margin-top: 20px;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    background-color: #f9f9f9;
+}
+
+#bmiResult {
+    font-size: 16px;
+    font-weight: bold;
+    color: #333;
+}
+    
+.V2 {
+    font-size: 16px ;
+    font-style: italic;
+    text-align: center;
+    color: rgba(255, 0, 0, 0.436);
+    }
+    .result{
+        font-size: 30px;
+        
+    }

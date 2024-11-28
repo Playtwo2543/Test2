@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="StyleYear.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>แปลง พ.ศ. เป็นศักราชอื่นๆ</title>
+</head>  
+<body>
+    <div class="container">
+        <h3>แปลงปี พ.ศ. เป็นศักราชอื่นๆ</h3>
+        <fieldset>
+            <label for="thaiYear">กรอกปี พ.ศ.:</label>
+            <input type="number" id="thaiYear" placeholder="กรอกปี พ.ศ.">
+        </fieldset>
+        <div>
+            <button onclick="convertToChs()">แปลงเป็น ค.ศ.</button>
+            <button onclick="convertToJs()">แปลงเป็น จ.ศ.</button>
+            <button onclick="convertToMs()">แปลงเป็น ม.ศ.</button>
+            <button onclick="convertToRs()">แปลงเป็น ร.ศ.</button>
+        </div>
+        <div class="result" id="result">โปรดกรอกปี พ.ศ.และเลือกศักราชที่ต้องการแปลง</div>
+    </div>
+
+    <script>
+        function convertYear(offset, label) {
+            let thaiYear = parseInt(document.getElementById('thaiYear').value);
+
+            // ตรวจสอบว่ากรอกข้อมูลครบและเป็นตัวเลข
+            if (!thaiYear || thaiYear <= 0) {
+                document.getElementById('result').textContent = "กรุณากรอกปี พ.ศ. ที่ถูกต้อง";
+                return;
+            }
+
+            // คำนวณปีตาม offset
+            let resultYear = thaiYear - offset;
+
+            // แสดงผลลัพธ์
+            document.getElementById('result').textContent = 
+                `ปี ${label} ที่ได้คือ ${resultYear}`;
+        }
+
+        function convertToChs() {
+            convertYear(543, "ค.ศ.");
+        }
+
+        function convertToJs() {
+            convertYear(1181, "จ.ศ.");
+        }
+
+        function convertToMs() {
+            convertYear(621, "ม.ศ.");
+        }
+
+        function convertToRs() {
+            convertYear(2324, "ร.ศ.");
+        }
+    </script>
+</body>
+
+</html>

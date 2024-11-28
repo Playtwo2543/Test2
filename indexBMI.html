@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="StyleBMI.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ระบบคำนวนดัชนีมวลกาย</title>
+    <style>
+
+    </style>
+</head>
+
+<body>
+    <div class="jeng">
+        <center>
+            <h3>ระบบคำนวนดัชนีมวลกาย👤</h3>
+            <fieldset>
+                <div class="V2">
+                    <label for="weight"> น้ำหนัก: </label>
+                    <input type="number" id="weight" placeholder="โปรดลงข้อมูลน้ำหนัก" oninput="calculateBMI()">
+                    <label>กิโลกรัม</label>
+
+                    <br>
+
+                    <label for="height"> ความสูง: </label>
+                    <input type="number" id="height" placeholder="โปรดลงข้อมูลส่วนสูง" oninput="calculateBMI()">
+                    <label>เซนติเมตร</label>
+                </div>
+            </fieldset>
+            <br>
+            <div class="result">
+                <div id="bmiResult">ใส่ข้อมูลน้ำหนักและส่วนสูงเพื่อคำนวณ</div>
+            </div>
+        </center>
+    </div>
+
+    <script>
+        function calculateBMI() {
+    let height = parseFloat(document.getElementById('height').value);
+    let weight = parseFloat(document.getElementById('weight').value);
+
+    // ตรวจข้อมูลครบไหม
+    if (!weight && !height) {
+        document.getElementById('bmiResult').textContent = "กรุณากรอกน้ำหนักและส่วนสูง";
+        return;
+    } else if (!weight) {
+        document.getElementById('bmiResult').textContent = "กรุณากรอกน้ำหนัก";
+        return;
+    } else if (!height) {
+        document.getElementById('bmiResult').textContent = "กรุณากรอกส่วนสูง";
+        return;
+    }
+
+    // ตรวจสอบค่าที่กรอกว่ามีค่าเป็นบวกหรือไม่
+    if (weight <= 0) {
+        document.getElementById('bmiResult').textContent = "ไม่มีใครบนโลกน้ำหนักติดลบนะครับ";
+        return;
+    }
+
+    if (height <= 0) {
+        document.getElementById('bmiResult').textContent = "คนจากโลกไหนครับที่ส่วนสูงติดลบ";
+        return;
+    }
+
+    // คำนวณ BMI
+    height = height / 100; // แปลง Cm เป็น M
+    let bmi = weight / (height * height);
+
+    // กำหนดหมวดหมู่ BMI
+    let category = '';
+    if (bmi < 18.5) {
+        category = 'ผอมเกิน';
+    } else if (bmi >= 18.5 && bmi < 24.9) {
+        category = 'ปกติดี';
+    } else if (bmi >= 25 && bmi < 29.9) {
+        category = 'น้ำหนักเกิน';
+    } else {
+        category = 'อ้วนแล้ว';
+    }
+
+    // แสดงผลลัพธ์
+    document.getElementById('bmiResult').innerHTML = 
+        `ดัชนีมวลกายของคุณคือ... ${bmi.toFixed(2)}<br>เราคิดว่าคุณ${category}นะครับ`;
+}
+
+
+    </script>
+</body>
+
+</html>
