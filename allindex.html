@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="alliStyle.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> แปลงอุณหภูมิ</title>
+    
+</head>
+<body>
+    <h1 colo>ระบบแปลงอุณหภูมิ</h1>
+    <div class="converter">
+        <label for="temperature">ใส่อุณหภูมิ:</label>
+        <input type="number" id="temperature" placeholder="เติมข้อมูลที่นี่">
+<br>
+        <label for="unit">เลือกรูปแบบ:</label>
+        <select id="unit">
+            <option value="c-to-f">เซลเซียส เป็น ฟาเรนไฮต์</option>
+            <option value="f-to-c">ฟาเรนไฮต์ เป็น เซลเซียส  </option>
+        </select>
+
+        <button onclick="convertTemperature()">กดเพื่อรับผล</button>
+
+        <h3 id="result"> ผลคือ :  </h3>
+    </div>
+
+    <script>
+        function convertTemperature() {
+            const temperature = parseFloat(document.getElementById('temperature').value);
+            const unit = document.getElementById('unit').value;
+            let result = '';
+
+            if (isNaN(temperature)) {
+                result = 'ใส่ข้อมูลก่อนจ้า.';
+            } else {
+                if (unit === 'c-to-f') {
+                    result = `${temperature} °C = ${(temperature * 9/5 + 32).toFixed(2)} °F`;
+                } else if (unit === 'f-to-c') {
+                    result = `${temperature} °F = ${((temperature - 32) * 5/9).toFixed(2)} °C`;
+                }
+            }
+
+            document.getElementById('result').textContent = `ผลคือ: ${result}`;
+        }
+    </script>
+</body>
+</html>

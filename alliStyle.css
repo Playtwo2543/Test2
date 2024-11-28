@@ -1,0 +1,47 @@
+
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            color: rgb(226, 52, 52);
+        
+            margin: 50px;
+            background: url(https://i.pinimg.com/originals/01/d2/a1/01d2a1a7ec7b4c0f152a4ca27b91c592.gif) no-repeat;
+            background-size: 120% ;
+
+        }
+        .converter {
+            max-width: 400px;
+            margin: auto;
+            padding: 20px;
+            border: 1px solid #ccc;
+            border-radius: 90px;
+            background-color: salmon;
+            box-shadow: 3 4px 8px rgba(0, 0, 0, 0.1);
+            
+        }
+        input, select{
+            padding: 10px;
+            margin: 5px 5px;
+            width: 65%;
+            text-align: left;
+            border: 1px solid navy;
+            border-radius: 40px ;
+            font-size: 16px;
+            background-color: rgb(244, 236, 160);
+
+        }
+        button {
+            padding: 10px;
+            margin: 10px 10px;
+            width: 40%;
+            border: 1px solid navy;
+            border-radius: 12px ;
+            font-size: 16px;
+            background-color: rgb(160, 229, 244);
+            
+
+        }
+        button:hover {
+            background-color: #6500b3;
+            box-shadow: 3 4px 8px rgba(0, 0, 0, 0.1);
+        }
